@@ -19,3 +19,17 @@
 	gap: 20px;
 	flex-wrap: wrap;
 }
+
+@media (max-width: 480px) {
+	.container {
+		gap: 10px;
+	}
+	.title {
+		text-align: center;
+	}
+
+	.desc {
+		width: 90%;
+		text-align: center;
+	}
+}

@@ -4,7 +4,7 @@ import Image from 'next/image';
 const PizzaCard = () => {
 	return (
 		<div className={styles.container}>
-			<Image src="/img/pizza.png" alt="pizza" width="150" height="150" />
+			<Image src="/img/pizza.png" alt="pizza" width="120" height="120" />
 
 			<h1 className={styles.title}>FIORI DI ZUCCA</h1>
 			<span className={styles.price}>$19.0</span>
