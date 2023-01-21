@@ -15,11 +15,13 @@
 	width: 100px;
 	height: 100px;
 	position: relative;
+	margin: 0 auto;
 }
 
 .table {
 	width: 100%;
 	border-spacing: 20px;
+	text-align: center;
 }
 
 .name {
@@ -57,6 +59,21 @@
 	cursor: pointer;
 	margin-top: 20px;
 	border: none;
+}
+
+.paymentMethods {
+	margin-top: 10px;
+	display: flex;
+	flex-direction: column;
+}
+
+.payButton {
+	padding: 10px 5px;
+	cursor: pointer;
+	margin-bottom: 5px;
+	background-color: white;
+	color: teal;
+	font-weight: bold;
 }
 
 @media (max-width: 480px) {
