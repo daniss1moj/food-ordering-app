@@ -31,6 +31,17 @@
 	position: relative;
 }
 
+.buyButton {
+	background: #d1411e;
+	color: #fff;
+	padding: 5px 15px;
+	border-radius: 20px;
+	transition: 0.5s all ease-in-out;
+	&:hover {
+		background: #7c2813;
+	}
+}
+
 @media (max-width: 580px) {
 	.container {
 		width: 100%;

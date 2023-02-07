@@ -118,9 +118,22 @@ const Product = ({ pizza }) => {
 
 export default Product;
 
-export const getServerSideProps = async (context) => {
+export async function getStaticPaths() {
+	const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/products`);
+	const paths = res.data.map((product) => {
+		return {
+			params: { id: `${product.id}` },
+		};
+	});
+	return {
+		paths: paths,
+		fallback: 'blocking',
+	};
+}
+
+export const getStaticProps = async (context) => {
 	const { params } = context;
-	const res = await axios.get(`http://localhost:3000/api/products/${params.id}`);
+	const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/products/${params.id}`);
 	return {
 		props: {
 			pizza: res.data,

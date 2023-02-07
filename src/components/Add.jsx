@@ -43,7 +43,7 @@ const Add = ({ setClose }) => {
 				img: url,
 			};
 
-			await axios.post('http://localhost:3000/api/products', newProduct);
+			await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/products`, newProduct);
 			setClose(true);
 		} catch (err) {
 			console.log(err);
@@ -63,11 +63,16 @@ const Add = ({ setClose }) => {
 				</div>
 				<div className={styles.item}>
 					<label className={styles.label}>Title</label>
-					<input type="text" onChange={(e) => setTitle(e.target.value)} />
+					<input type="text" onChange={(e) => setTitle(e.target.value)} value={title} />
 				</div>
 				<div className={styles.item}>
 					<label className={styles.label}>Description</label>
-					<textarea rows={5} type="text" onChange={(e) => setDesc(e.target.value)} />
+					<textarea
+						rows={5}
+						type="text"
+						onChange={(e) => setDesc(e.target.value)}
+						value={desc}
+					/>
 				</div>
 				<div className={styles.item}>
 					<div className={styles.priceContainer}>
@@ -77,18 +82,21 @@ const Add = ({ setClose }) => {
 							type="number"
 							placeholder="small"
 							onChange={(e) => changePrice(e, 0)}
+							value={prices[0]}
 						/>
 						<input
 							className={`${styles.input} ${styles.inputSm}`}
 							type="number"
 							placeholder="medium"
 							onChange={(e) => changePrice(e, 1)}
+							value={prices[1]}
 						/>
 						<input
 							className={`${styles.input} ${styles.inputSm}`}
 							type="number"
 							placeholder="large"
 							onChange={(e) => changePrice(e, 2)}
+							value={prices[2]}
 						/>
 					</div>
 				</div>

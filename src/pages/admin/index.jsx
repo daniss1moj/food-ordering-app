@@ -131,8 +131,8 @@ export const getServerSideProps = async (context) => {
 			},
 		};
 	}
-	const productRes = await axios.get('http://localhost:3000/api/products');
-	const orderRes = await axios.get('http://localhost:3000/api/orders');
+	const productRes = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/products`);
+	const orderRes = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/orders`);
 
 	return {
 		props: {

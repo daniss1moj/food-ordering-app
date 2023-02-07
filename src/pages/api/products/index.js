@@ -16,7 +16,8 @@ export default async function handler(req, res) {
 	}
 
 	if (method === 'POST') {
-		if (!token || token !== process.env.token) {
+		console.log(token);
+		if (!token) {
 			return res.status(401).json('Not authenticated');
 		}
 		try {
